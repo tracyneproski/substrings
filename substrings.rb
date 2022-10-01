@@ -21,7 +21,6 @@ def substrings(searched, word_array)
       result.push(word)
     end
   }
-  return result
 
   final = result.reduce(Hash.new(0)) do |substr, occurs|
     substr[occurs] += 1
