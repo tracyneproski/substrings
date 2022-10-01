@@ -4,6 +4,10 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 
 substrings("below", dictionary)
 => { "below" => 1, "low" => 1 }
+
+> substrings("Howdy partner, sit down! Hows it going?", dictionary)
+=> { "down" => 1, "go" => 1, "going" => 1, "how" => 2, "howdy" => 1, "it" => 2, "i" => 3, "own" => 1, "part" => 1, "partner" => 1, "sit" => 1 }
+
 '''
 
 
@@ -13,18 +17,18 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 def substrings(searched, word_array)
   result = []
   word_array.each { |word|
-    if word.include? searched
+    if searched.include? word
       result.push(word)
-    end 
+    end
   }
+  return result
+
   final = result.reduce(Hash.new(0)) do |substr, occurs|
-    substr[occurs] +=1
+    substr[occurs] += 1
     substr
-    return final
   end
   return final
 end
-
 
 
 '''
