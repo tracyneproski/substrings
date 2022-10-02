@@ -1,4 +1,3 @@
-#Odin Project - Substrings
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
 
@@ -29,4 +28,6 @@ final_answer = substrings(search, dictionary)
 
 puts "Here is your answer:\n"
 puts final_answer 
+
+
 
