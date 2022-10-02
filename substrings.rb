@@ -8,6 +8,7 @@ substrings("below", dictionary)
 > substrings("Howdy partner, sit down! Hows it going?", dictionary)
 => { "down" => 1, "go" => 1, "going" => 1, "how" => 2, "howdy" => 1, "it" => 2, "i" => 3, "own" => 1, "part" => 1, "partner" => 1, "sit" => 1 }
 
+array.map(&:downcase).include?(string)
 '''
 
 
@@ -16,8 +17,8 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 
 def substrings(searched, word_array)
   result = []
-  word_array.each { |word|
-    if searched.include? word
+  word_array.map(&:downcase).each { |word|
+    if searched.downcase.include? word.downcase
       result.push(word)
     end
   }
